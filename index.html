@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+
+  :root {
+    --gold: #c9a46a;
+    --gold-light: #e8cf9f;
+    --gold-dark: #8a6a3a;
+    --bg: #1b1b1c;
+    --panel: #151515;
+    --text: #a9a9a9;
+    --line: rgba(201, 164, 106, 0.35);
+    --header-h: 88px;
+    --nav-h: 42px;
+    --footer-h: 48px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at 70% 0%, #4a4a4c 0%, transparent 45%),
+      linear-gradient(#2a2a2b 0, #161617 360px, #1b1b1c 100%);
+    background-attachment: fixed;
+    padding: calc(var(--header-h) + var(--nav-h)) 0 calc(var(--footer-h) + 40px);
+    min-height: 100vh;
+  }
+
+  /* ---------- Logo header (generated) ---------- */
+  body::before {
+    content: "Pink Box Jewerly Portal";
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    padding: 34px 0 0 36px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: var(--gold-light);
+    text-shadow: 0 2px 6px #000;
+    background: linear-gradient(#262627, #1a1a1b);
+    z-index: 20;
+  }
+
+  /* ---------- Footer (generated) ---------- */
+  body::after {
+    content: "Home   |   About   |   Jewelry   |   Style   |   Collections   |   Contacts";
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: var(--footer-h);
+    line-height: var(--footer-h);
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: var(--gold);
+    background: #0e0e0f;
+    border-top: 1px solid var(--line);
+    z-index: 20;
+  }
+
+  /* ---------- Nav bar ---------- */
+  a {
+    position: fixed;
+    top: var(--header-h); left: 0; right: 0;
+    height: var(--nav-h);
+    line-height: var(--nav-h);
+    padding: 0 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+    text-decoration: none;
+    background: linear-gradient(#3a3a3b, #1c1c1d);
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #000;
+    z-index: 21;
+    transition: color .2s, background .2s;
+  }
+  a:hover { color: #fff; background: linear-gradient(#4a4a4b, #262627); }
+
+  /* ---------- Hero banner ---------- */
+  h1.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 280px;
+    margin: 0 0 40px;
+    padding: 40px 12%;
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    background:
+      radial-gradient(ellipse at 75% 45%, rgba(201, 164, 106, 0.28), transparent 55%),
+      linear-gradient(#3b3b3d, #151516);
+    border-bottom: 1px solid var(--line);
+    box-shadow: inset 0 -30px 50px rgba(0, 0, 0, 0.6);
+  }
+  h1.title::after {
+    content: "God Bless!";
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+  }
+
+  /* ---------- Section headings ---------- */
+  h2 {
+    width: calc(100% - 48px);
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding-bottom: 12px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ---------- Form panel ---------- */
+  form {
+    width: calc(100% - 48px);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), inset 0 0 0 4px #101010, inset 0 0 0 5px rgba(201, 164, 106, 0.15);
+  }
+  form p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+  }
+
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #ddd;
+    background: #0d0d0e;
+    border: 1px solid #3a3a3a;
+    border-radius: 0;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  input[type="text"]:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(201, 164, 106, 0.18);
+  }
+
+  input[type="button"] {
+    display: block;
+    margin: 10px auto 0;
+    padding: 9px 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2a2013;
+    background: linear-gradient(#f0dcb4, #b8935a);
+    border: 1px solid var(--gold-dark);
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    transition: filter .2s;
+  }
+  input[type="button"]:hover { filter: brightness(1.12); }
+
+  /* ---------- Smaller Edit / Delete buttons ---------- */
+  #BookstoreTable td:last-child input[type="button"] {
+    display: inline-block;
+    margin: 0 2px;
+    padding: 4px 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  /* ---------- Inventory table ---------- */
+  #BookstoreTable {
+    width: calc(100% - 48px);
+    max-width: 900px;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    font-size: 12.5px;
+  }
+
+  #BookstoreTable th,
+  #BookstoreTable td {
+    border: 0;
+    border-bottom: 1px solid rgba(201, 164, 106, 0.18);
+    padding: 14px 14px;
+    text-align: left;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+  }
+
+  #BookstoreTable th {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    background: linear-gradient(#2e2e2f, #1c1c1d);
+    border-bottom: 1px solid var(--gold-dark);
+  }
+
+  #BookstoreTable td { color: #b5b5b5; }
+  #BookstoreTable td:first-child { color: var(--gold); font-weight: 600; }
+  #BookstoreTable tr:last-child td { border-bottom: 0; }
+  #BookstoreTable tr:hover td { background: rgba(201, 164, 106, 0.07); }
+
+  /* ---------- Gem image (same spot as the upload button) ---------- */
+  #BookstoreTable img.gem-img {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 1px solid var(--gold-dark);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+  }
+  #BookstoreTable img.gem-img:hover { filter: brightness(1.15); }
+
+  @media (max-width: 900px) {
+    h1.title { font-size: 28px; padding: 30px 24px; }
+    body::after { font-size: 10px; }
+    #BookstoreTable { display: block; overflow-x: auto; table-layout: auto; }
+    #BookstoreTable th, #BookstoreTable td { min-width: 130px; }
+  }
+</style>
+
+    <title>Portal</title>
+
+  </head>
+  
+  <body>
+  <a href="neighbor.html">Go to Neighbor Page</a>
+    <h1 class="title">Gemstone Inventory System</h1>
+    <h2 id="">Add Inventory Editor</h2>
+    <form>
+      <p>
+        Gem Control Number: <input type="text" id="gemControlNumber" required><br><br>
+        Price: <input type="text" id="price" required><br><br>
+        Description: <input type="text" id="description" required><br><br>
+        Quantity: <input type="text" id="quantity" required><br><br>
+        Status: <input type="text" id="status" required><br><br>
+        Client Name: <input type="text" id="clientName" required><br><br>
+        Client Contact: <input type="text" id="clientContact" required><br><br>
+      
+        <input type="button" value="Update Gem" onclick="OnAdd()">
+      </p>
+    </form><br><br>
+
+    <h2 id="">Gemstone Inventory</h2>
+    <table id="BookstoreTable">
+      <tr>
+        <th>Gem Control Number</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Status</th>
+        <th>Client Name</th>
+        <th>Client Contact</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </table>
+
+    <!-- One hidden file picker shared by every row -->
+    <input type="file" id="imageInput" accept="image/*" hidden>
+
+      <script>
+          // Storage key
+          const GEM_KEY = "GEMSTONE_KEY"
+
+          // Text input ids (match the form, in table order)
+          const FIELDS = ["gemControlNumber", "price", "description", "quantity", "status", "clientName", "clientContact"]
+
+          // A global editable inventory array for content
+          let Gemstones = JSON.parse(localStorage.getItem(GEM_KEY)) ?? []
+
+          // Row waiting for an image from the file picker
+          let pendingImageIndex = null
+
+          function retrieve(id) {
+            return document.getElementById(id)
+          }
+
+          function getinner(id) {
+            return retrieve(id).value
+          }
+
+          // Escape text so user input can't break the table HTML
+          function esc(s) {
+            return String(s ?? "")
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+          }
+
+          function save() {
+            try {
+              localStorage.setItem(GEM_KEY, JSON.stringify(Gemstones))
+            } catch (e) {
+              alert("Could not save. The image may be too large for browser storage.")
+            }
+          }
+
+          const LibraryInventory = retrieve("BookstoreTable")
+          const LibraryTitles = LibraryInventory.innerHTML
+          const imageInput = retrieve("imageInput")
+
+          // Image cell: image if one exists, otherwise an upload button (same spot)
+          function createImageCell(info, i) {
+            if (info.image) {
+              return `<img class="gem-img" src="${info.image}" alt="Gem image" title="Click to change" onclick="pickImage(${i})">`
+            }
+            return `<input type="button" value="Upload" onclick="pickImage(${i})">`
+          }
+
+          // Creates a row for the inventory table
+          function createField(info, i) {
+            return `
+              <tr>
+                <td>${esc(info.gemControlNumber)}</td>
+                <td>${esc(info.price)}</td>
+                <td>${esc(info.description)}</td>
+                <td>${esc(info.quantity)}</td>
+                <td>${esc(info.status)}</td>
+                <td>${esc(info.clientName)}</td>
+                <td>${esc(info.clientContact || "No Contact")}</td>
+                <td>${createImageCell(info, i)}</td>
+                <td>
+                  <input type="button" onclick="onEdit(${i})" value="Edit">
+                  <input type="button" onclick="onDelete(${i})" value="Delete">
+                </td>
+              </tr>
+            `
+          }
+
+          function updateTableContent() {
+            let rows = ""
+            for (let i = 0; i < Gemstones.length; i++) {
+              rows += createField(Gemstones[i], i)
+            }
+            LibraryInventory.innerHTML = LibraryTitles + rows
+          }
+
+          // ---------- Image upload ----------
+          function pickImage(i) {
+            pendingImageIndex = i
+            imageInput.value = ""
+            imageInput.click()
+          }
+
+          imageInput.addEventListener("change", (e) => {
+            const file = e.target.files[0]
+            if (!file || pendingImageIndex === null) return
+
+            const reader = new FileReader()
+            reader.addEventListener("load", () => {
+              Gemstones[pendingImageIndex].image = reader.result
+              pendingImageIndex = null
+              save()
+              updateTableContent()
+            })
+            reader.readAsDataURL(file)
+          })
+
+          // ---------- Edit / Delete / Add ----------
+          function onEdit(i) {
+            const info = Gemstones[i]
+            if (!info) return
+
+            for (const k of FIELDS) {
+              retrieve(k).value = info[k] ?? ""
+            }
+          }
+
+          function onDelete(i) {
+            Gemstones.splice(i, 1)
+            updateTableContent()
+            save()
+          }
+
+          function OnAdd() {
+            const w = getinner("gemControlNumber").trim()
+            if (!w) {
+              alert("Gem Control Number is required.")
+              return
+            }
+
+            const index = Gemstones.findIndex(g => g.gemControlNumber === w)
+
+            let updatecontent = {
+              gemControlNumber: w,
+              price: getinner("price"),
+              description: getinner("description"),
+              quantity: getinner("quantity"),
+              status: getinner("status") || "Available",
+              clientName: getinner("clientName") || "No Client",
+              clientContact: getinner("clientContact") || "No Contact",
+              // keep the existing image when updating a gem
+              image: index === -1 ? "" : (Gemstones[index].image ?? "")
+            }
+
+            if (index === -1) {
+              Gemstones.push(updatecontent)
+            } else {
+              Gemstones[index] = updatecontent
+            }
+
+            updateTableContent()
+            save()
+          }
+
+          updateTableContent()
+      </script>
+  </body>
+</html>
